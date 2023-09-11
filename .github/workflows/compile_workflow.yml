@@ -17,25 +17,8 @@ jobs:
       with:
         root_file: main.tex
 
-
-    - name: Release
-      id: release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload PDF
+      uses: actions/upload-artifact@v3
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }} ${{ github.event.head_commit.message }}
-        draft: false
-        prerelease: false
-    
-    - name: Upload 
-      id: upload
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./main.pdf
-        asset_name: main.pdf
-        asset_content_type: pdf
+        name: PDF
+        path: main.pdf
