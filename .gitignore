@@ -1,0 +1,14 @@
+# A gitignore for all the files coming from the build process of the latex file
+# including the pdf file itself
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+*.gz
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex.gz\(busy\)
