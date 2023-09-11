@@ -19,7 +19,7 @@ jobs:
 
                   ## Use this setting to pass custom arguments options to
                   ## TeXtidote (such as what grammar checker to use).
-                  # args:
+                  args: --check en --dict en_US.dict           
             - name: Upload TeXtidote report
               uses: actions/upload-artifact@v2
               with:
