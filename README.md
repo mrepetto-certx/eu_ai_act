@@ -4,3 +4,5 @@
 # journal
 https://www.aiethicsjournal.org/
 
+# links
+https://oecd.ai/en/
