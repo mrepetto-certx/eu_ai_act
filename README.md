@@ -8,3 +8,5 @@ https://www.aiethicsjournal.org/
 https://oecd.ai/en/
 
 https://cloud.google.com/vertex-ai/docs/evaluation/intro-evaluation-fairness?hl=it
+
+https://github.com/federicoMz/genFair
