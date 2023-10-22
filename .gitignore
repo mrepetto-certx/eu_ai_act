@@ -12,3 +12,4 @@
 *.fls
 *.synctex.gz
 *.synctex.gz\(busy\)
+#*.run.xml

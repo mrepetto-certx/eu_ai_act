@@ -1,5 +1,19 @@
 \documentclass{article}
+
 \usepackage[backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{appendix}
+
 \addbibresource{biblio.bib}
 
 \title{Towards an Artificial Intelligence Audit Framework for Technical Robustness, Transparency, and Fairness}
@@ -8,122 +22,26 @@
 
 
 \begin{document}
-	
-	
-	\maketitle
-	
-	
-	\begin{abstract}
-		
-		The European Artificial Intelligence Act proposes a regulatory framework for Artificial Intelligence Systems aiming at ensuring that such a systems placed on the EU market and used in the Union are safe and respect existing law on fundamental rights and Union values.
-		
-		Although proposing a compelling legal framework such an act falls short in terms of delivering technical requirements that can be implemented by the Decision Maker.
-		
-		Moreover, the Act does not adequately address the trade-offs that an Artificial Intelligence system may have in different aspects ranging from accuracy to transparency, robustness to fairness ans so forth.
+\maketitle
+\begin{abstract}
+	The European Artificial Intelligence Act proposes a regulatory framework for Artificial Intelligence Systems aiming at ensuring that such a systems placed on the EU market and used in the Union are safe and respect existing law on fundamental rights and Union values.
+	Although proposing a compelling legal framework such an act falls short in terms of delivering technical requirements that can be implemented by the Decision Maker.
+	Moreover, the Act does not adequately address the trade-offs that an Artificial Intelligence system may have in different aspects ranging from accuracy to transparency, robustness to fairness ans so forth.
+	In this paper we propose an audit framework addressing these tensions. 
+	The proposed approach collects technical requirements from state-of-the-art research combines them using the Analytical Hierarchical Approach and construct a Multicriteria Optimization problem allowing the decision maker to mitigate AI risks by optimally allocating his resources. 
+\end{abstract}
 
-		In this paper we propose an audit framework addressing these tensions. 
-		The proposed approach collects technical requirements from state-of-the-art research combines them using the Analytical Hierarchical Approach and construct a Multicriteria Optimization problem allowing the decision maker to mitigate AI risks by optimally allocating his resources. 
-			
-	\end{abstract}
-	
-	\section{Introduction}
-
-	Artificial Intelligence (AI) systems are becoming increasingly prevalent in our society, with applications ranging from autonomous vehicles to facial recognition. 
-	As AI technology continues to advance, it is crucial to ensure that these systems are safe, transparent, and fair.
-	In an effort to tame this powerful yet uncontrolled area, many countries started developing regulation frameworks.
-	
-	Among the multitude of such frameworks the one proposed by the European Union (EU) stands out in terms of novelty and maturity.
-	
-	% Forse questo dovrebbe stare in una sua sezione?
-	The EU has been a pioneer and leader in the field of AI regulation. 
-	It has been interested in developing and regulating AI for a long time, and has adopted a series of initiatives and documents that reflect its vision and strategy for AI. 
-	The EU’s approach to AI is based on two main pillars: trust and excellence. 
-	Trust means that AI systems should respect the EU’s values and fundamental rights, and comply with the relevant laws and regulations.
-	Excellence means that AI systems should be innovative and competitive, and contribute to social and economic progress.
-	
-	The EU’s interest in AI dates back to the 1980s, when it launched its first research program on AI, called ESPRIT (European Strategic Programme for Research in Information Technology). 
-	The EU has also established several networks and platforms for collaboration and coordination on AI research and innovation, such as the European Research Area Network on Artificial Intelligence (ERA-Net AI), the European AI Alliance, the European Laboratory for Learning and Intelligent Systems (ELLIS), etc.
-	
-	The EU’s interest in AI regulation also emerged in the late 1980s, when it adopted its first directive on data protection, which set the basic principles for the processing of personal data in the EU. 
-	Since then, the EU has developed a comprehensive legal framework for data protection and privacy, which is relevant for many aspects of AI, such as data collection, processing, storage, sharing, etc.
-	The most recent and important piece of legislation in this area is the General Data Protection Regulation (GDPR), which came into force in 2018. 
-	
-	In addition to data protection and privacy, the EU has also addressed other legal issues that are relevant for AI regulation, such as liability, consumer protection, intellectual property rights, human rights, etc.
-	
-	However, the EU also recognized the need to have a more specific and tailored legal framework for AI regulation, that could address the particular challenges and opportunities of AI systems, and harmonize the existing and emerging national laws and initiatives on AI across its member states. 
-	Based on these considerations, the EU proposed the Artificial Intelligence Act (AI Act) in April 2021, as part of its broader Digital Strategy. 
-	
-	The AI Act is the first comprehensive legal proposal on AI in the world.
-	It aims to create an ecosystem of trust and excellence for AI in the EU, by setting harmonized rules and requirements for AI providers, users, and authorities. 
-	It also proposes a governance structure and enforcement mechanism for ensuring compliance and accountability. 
-	The AI Act is currently under discussion by the European Parliament and the Council of the EU, which will have to agree on a final text before it can become law.
-	
-	% L'approccio risk base, magari qui metto uno schemino
-	One of the relevant feature of the Act is the risk-based approach to AI regulation, by classifying AI systems into four categories according to their potential impact on human rights, safety, and fundamental values:
-	
-	\begin{itemize}	
-		\item Prohibited AI systems are those that are considered unacceptable and contrary to the EU’s values and principles, such as AI systems that manipulate human behavior, opinions, or decisions; AI systems that exploit vulnerabilities of specific groups; AI systems that allow social scoring by governments; etc. These AI systems are banned in the EU.
-		
-		\item High-risk AI systems are those that are likely to cause significant harm or adverse effects on human rights, safety, or fundamental values, such as AI systems used for biometric identification; AI systems used for critical infrastructure; AI systems used for education or vocational training; AI systems used for employment or workers management; etc. These AI systems are subject to strict obligations and requirements, such as adequate risk assessment and management; high quality and traceability of data and algorithms; transparency and provision of information to users; human oversight and intervention; accuracy, robustness, and security; etc. These AI systems also have to undergo a conformity assessment by a notified body before they can be placed on the market or put into service.
-		
-		\item Limited-risk AI systems are those that pose some risks to human rights, safety, or fundamental values, but to a lesser extent than high-risk AI systems, such as AI systems used for chatbots; AI systems used for video games; AI systems used for image or video manipulation; etc. These AI systems are subject to transparency obligations, such as informing users that they are interacting with an AI system; disclosing the use of automated image or video manipulation; etc.
-		
-		\item Minimal-risk AI systems are those that pose no or negligible risks to human rights, safety, or fundamental values, such as AI systems used for spam filters; AI systems used for smart home devices; AI systems used for personal assistants; etc. These AI systems are not subject to any specific obligations or requirements under the regulation, but they have to comply with the general principles and existing laws of the EU.
-	\end{itemize}
-	
-	Figure ... 
-	
-	Given the broad scope of the legislation and the fact that the field is still evolving, a clear example been the inclusion of foundation models after the first draft, the Act does not contain any technical requirements nor means of compliance.
-	
-	Such a standardization task has been given to the CEN-CENELEC Joint Technical Committee 21.
-	
-	However as noted by \cite{europeancommission.jointresearchcentre._2023a} the current international standards already provide adequate coverage of the Act.
-	
-	In particular dimensions such as...
-	
-	Nonetheless such technical requirements can be difficult to implement by the Decision Maker which is faced by a multitude of conflicting objectives and a budget constraint.
-	
-	Many authors have proposed qualitative frameworks such as Floridi and ... 
-	
-\section{State of the art}
-
-\section{Transparency}
-Transparency in AI systems is crucial for building trust and accountability. The EU AI Act mandates transparency requirements to ensure that AI systems and their decision-making processes are explainable and understandable. We delve into the transparency provisions of the act and discuss their implications.
-
-In defining the transparency for AI systems we lverage the theoretical definintion provided by Ida Koivisto in and we expand to comprise the actual use case of a complex system served used by many stakeholders.
-
-In doing so we aim at bridging the gap between the legal literature and its practical implication on a certification scheme.
-
-In her work Prof. Koivisto highlights two different concepts bringing transparency for a automated decision making process.
-
-The first concept is the concept of openness, which refers to the availability of information about the AI system and its decision-making process. This includes providing access to the underlying algorithms, training data, and any relevant documentation. Openness allows stakeholders to understand how the system works and enables external scrutiny and auditing.
-
-
-The second concept is the concept of interpretability, which focuses on the understandability of the AI system's decision-making process. It involves providing explanations or justifications for the system's outputs, allowing individuals to comprehend why a certain decision was made. Interpretability is particularly important in sensitive domains such as healthcare or finance, where decisions can have significant consequences.
-
-
-The EU AI Act incorporates both openness and interpretability requirements to ensure transparency in AI systems. It mandates that AI providers make information about the system's operation and capabilities available to users, and that they provide explanations for the decisions made by the system. This facilitates accountability and allows users to challenge or question the system's output if necessary.
-
-
-However, achieving transparency in AI systems is not always straightforward. Complex algorithms and models, such as deep neural networks, can be difficult to interpret or explain. In such cases, additional techniques, such as model-agnostic interpretability methods or post-hoc explanations, may be employed to enhance transparency \cite{}.
-
-
-Utilising such techniques comes at a cost, as they may introduce trade-offs between transparency and performance. For example, simplifying a complex model to make it more interpretable may result in a loss of accuracy. Therefore, finding the right balance between transparency and performance is a challenge that needs to be addressed when designing AI systems.
-As highlited by  using such methods may lead to contraddictory explanation.
-But even in the case of concordance in the explanations it is still difficult to evaluate the actual gain in terms of transparency.
-
-\section{Technical Robustness}
-
-Technical robustness refers to the ability of an AI system to withstand and adapt to unforeseen circumstances. The EU AI Act establishes guidelines and requirements for ensuring that AI systems are designed and developed with robustness in mind. This section explores the various aspects of technical robustness outlined in the act.
-
-\section{Fairness}
-
-Fairness is a fundamental aspect of AI systems, as they can significantly impact various aspects of society. The EU AI Act addresses fairness concerns by establishing guidelines and requirements for preventing discriminatory and biased outcomes. In this section, we analyze the fairness dimension of the act.
-
-The EU AI Act plays a pivotal role in providing a certification schema for three relevant dimensions of AI systems: technical robustness, transparency, and fairness. By adhering to the requirements outlined in the act, AI developers and deployers can ensure the responsible and ethical use of AI technology within the European Union.
-
-
+\include{sections/introduction}
+\include{sections/related_works}
+\include{sections/methodology}
+\include{sections/evaluation}
+\include{sections/discussion}
+\include{sections/conclusion}
 
 \printbibliography
+
+\begin{appendices}
+	\include{sections/appendix}
+\end{appendices}
 
 \end{document}
