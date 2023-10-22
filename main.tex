@@ -1,46 +1,47 @@
 \documentclass{article}
-\usepackage[backend=biber]{biblatex}
 
-\title{The EU AI Act: A Certification Schema for Technical Robustness, Transparency, and Fairness}
+\usepackage[backend=biber]{biblatex}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{appendix}
+
+\addbibresource{biblio.bib}
+
+\title{Towards an Artificial Intelligence Audit Framework for Technical Robustness, Transparency, and Fairness}
 
 \author{Chiara Galimberti\thanks{TBD} \and Marco Repetto\thanks{CertX, Fribourg, Switzerland.}}
 
 
 \begin{document}
-
-	
 \maketitle
-
-
 \begin{abstract}
-
-This paper discusses the EU AI Act and its role in establishing a certification schema for three key dimensions of artificial intelligence: technical robustness, transparency, and fairness. We analyze the implications of this act on the development and deployment of AI systems within the European Union.
-
+	The European Artificial Intelligence Act proposes a regulatory framework for Artificial Intelligence Systems aiming at ensuring that such a systems placed on the EU market and used in the Union are safe and respect existing law on fundamental rights and Union values.
+	Although proposing a compelling legal framework such an act falls short in terms of delivering technical requirements that can be implemented by the Decision Maker.
+	Moreover, the Act does not adequately address the trade-offs that an Artificial Intelligence system may have in different aspects ranging from accuracy to transparency, robustness to fairness ans so forth.
+	In this paper we propose an audit framework addressing these tensions. 
+	The proposed approach collects technical requirements from state-of-the-art research combines them using the Analytical Hierarchical Approach and construct a Multicriteria Optimization problem allowing the decision maker to mitigate AI risks by optimally allocating his resources. 
 \end{abstract}
 
-
-\section{Introduction}
-
-The field of artificial intelligence (AI) has witnessed significant advancements in recent years. However, concerns have been raised regarding the ethical and legal implications of AI systems, particularly in relation to their technical robustness, transparency, and fairness. In response to these concerns, the European Union (EU) has introduced the AI Act, which aims to provide a certification schema for addressing these dimensions.
-
-
-\section{Technical Robustness}
-
-Technical robustness refers to the ability of an AI system to withstand and adapt to unforeseen circumstances. The EU AI Act establishes guidelines and requirements for ensuring that AI systems are designed and developed with robustness in mind. This section explores the various aspects of technical robustness outlined in the act.
-
-
-\section{Transparency}
-
-Transparency in AI systems is crucial for building trust and accountability. The EU AI Act mandates transparency requirements to ensure that AI systems and their decision-making processes are explainable and understandable. We delve into the transparency provisions of the act and discuss their implications.
-
-
-\section{Fairness}
-
-Fairness is a fundamental aspect of AI systems, as they can significantly impact various aspects of society. The EU AI Act addresses fairness concerns by establishing guidelines and requirements for preventing discriminatory and biased outcomes. In this section, we analyze the fairness dimension of the act.
-
-The EU AI Act plays a pivotal role in providing a certification schema for three relevant dimensions of AI systems: technical robustness, transparency, and fairness. By adhering to the requirements outlined in the act, AI developers and deployers can ensure the responsible and ethical use of AI technology within the European Union.
-
+\include{sections/introduction}
+\include{sections/related_works}
+\include{sections/methodology}
+\include{sections/evaluation}
+\include{sections/discussion}
+\include{sections/conclusion}
 
 \printbibliography
+
+\begin{appendices}
+	\include{sections/appendix}
+\end{appendices}
 
 \end{document}
