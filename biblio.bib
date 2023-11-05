@@ -9,7 +9,7 @@
   author = {Bareinboim, Elias},
   abstract = {Decision-making systems based on AI and machine learning have been used throughout a wide range of real-world scenarios, including healthcare, law enforcement, education, and finance. It is no longer far-fetched to envision a future where autonomous systems will drive entire business decisions and, more broadly, support large-scale decision-making infrastructure to solve society’s most challenging problems. Issues of unfairness and discrimination are pervasive when decisions are being made by humans, and remain (or are potentially amplified) when decisions are made using machines with little transparency, accountability, and fairness. In this paper, we introduce a framework for causal fairness analysis with the intent of filling in this gap, i.e., understanding, modeling, and possibly solving issues of fairness in decision-making settings. The main insight of our approach will be to link the quantification of the disparities present in the observed data with the underlying, often unobserved, collection of causal mechanisms that generate the disparity in the first place, a challenge we call the Fundamental Problem of Causal Fairness Analysis (FPCFA). In order to solve the FPCFA, we study the problem of decomposing variations and empirical measures of fairness that attribute such variations to structural mechanisms and different units of the population. Our effort culminates in the Fairness Map, the first systematic attempt to organize and explain the relationship between various criteria found in the literature. Finally, we study which causal assumptions are minimally needed for performing causal fairness analysis and propose the Fairness Cookbook, which allows one to assess the existence of disparate impact and disparate treatment.},
   langid = {english},
-  file = {C:\Users\MarcoRepetto\Zotero\storage\WFLQJU2C\Bareinboim - Seminar für Statistik, ETH Zürich drago.plecko@sta.pdf}
+  file = {C:\Users\MarcoRepetto\Zotero\storage\WFLQJU2C\bareinboim_.pdf}
 }
 
 @article{barredoarrieta_2020,
@@ -44,7 +44,26 @@
   abstract = {Fairness is an increasingly important concern as machine learning models are used to support decision making in high-stakes applications such as mortgage lending, hiring, and prison sentencing. This paper introduces a new open source Python toolkit for algorithmic fairness, AI Fairness 360 (AIF360), released under an Apache v2.0 license \{https://github.com/ibm/aif360). The main objectives of this toolkit are to help facilitate the transition of fairness research algorithms to use in an industrial setting and to provide a common framework for fairness researchers to share and evaluate algorithms. The package includes a comprehensive set of fairness metrics for datasets and models, explanations for these metrics, and algorithms to mitigate bias in datasets and models. It also includes an interactive Web experience (https://aif360.mybluemix.net) that provides a gentle introduction to the concepts and capabilities for line-of-business users, as well as extensive documentation, usage guidance, and industry-specific tutorials to enable data scientists and practitioners to incorporate the most appropriate tool for their problem into their work products. The architecture of the package has been engineered to conform to a standard paradigm used in data science, thereby further improving usability for practitioners. Such architectural design and abstractions enable researchers and developers to extend the toolkit with their new algorithms and improvements, and to use it for performance benchmarking. A built-in testing infrastructure maintains code quality.\vphantom\}},
   pubstate = {preprint},
   keywords = {Computer Science - Artificial Intelligence},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\5E2WNVTH\\Bellamy et al. - 2018 - AI Fairness 360 An Extensible Toolkit for Detecti.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FI4BP2V3\\1810.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\5E2WNVTH\\bellamy_2018.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FI4BP2V3\\1810.html}
+}
+
+@article{benjamins_2021,
+  title = {A Choices Framework for the Responsible Use of {{AI}}},
+  author = {Benjamins, Richard},
+  date = {2021-02-01},
+  journaltitle = {AI and Ethics},
+  shortjournal = {AI Ethics},
+  volume = {1},
+  number = {1},
+  pages = {49--53},
+  issn = {2730-5961},
+  doi = {10.1007/s43681-020-00012-5},
+  url = {https://doi.org/10.1007/s43681-020-00012-5},
+  urldate = {2023-10-29},
+  abstract = {Popular press and media often make us believe that artificial intelligence technology is ethical or unethical by itself. In this paper, we will argue that organizations that develop or apply AI have certain choices they can make that will lead to a more or less responsible use of AI. By approaching those choices in a methodological way, organizations can make better decisions toward the ethical use of this powerful technology.},
+  langid = {english},
+  keywords = {assessment\_framework},
+  file = {C:\Users\MarcoRepetto\Zotero\storage\5X7PX9PX\benjamins_2021.pdf}
 }
 
 @inproceedings{biswas_2021,
@@ -62,7 +81,7 @@
   urldate = {2023-10-05},
   abstract = {In recent years, many incidents have been reported where machine learning models exhibited discrimination among people based on race, sex, age, etc. Research has been conducted to measure and mitigate unfairness in machine learning models. For a machine learning task, it is a common practice to build a pipeline that includes an ordered set of data preprocessing stages followed by a classifier. However, most of the research on fairness has considered a single classifier based prediction task. What are the fairness impacts of the preprocessing stages in machine learning pipeline? Furthermore, studies showed that often the root cause of unfairness is ingrained in the data itself, rather than the model. But no research has been conducted to measure the unfairness caused by a specific transformation made in the data preprocessing stage. In this paper, we introduced the causal method of fairness to reason about the fairness impact of data preprocessing stages in ML pipeline. We leveraged existing metrics to define the fairness measures of the stages. Then we conducted a detailed fairness evaluation of the preprocessing stages in 37 pipelines collected from three different sources. Our results show that certain data transformers are causing the model to exhibit unfairness. We identified a number of fairness patterns in several categories of data transformers. Finally, we showed how the local fairness of a preprocessing stage composes in the global fairness of the pipeline. We used the fairness composition to choose appropriate downstream transformer that mitigates unfairness in the machine learning pipeline.},
   keywords = {Computer Science - Machine Learning,D.2.0,I.2.5},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\L26HNFFL\\Biswas e Rajan - 2021 - Fair Preprocessing Towards Understanding Composit.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FNEEF8F4\\2106.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\L26HNFFL\\biswas_2021.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FNEEF8F4\\2106.html}
 }
 
 @article{diaz-rodriguez_2023,
@@ -81,6 +100,12 @@
   abstract = {Trustworthy Artificial Intelligence (AI) is based on seven technical requirements sustained over three main pillars that should be met throughout the system’s entire life cycle: it should be (1) lawful, (2) ethical, and (3) robust, both from a technical and a social perspective. However, attaining truly trustworthy AI concerns a wider vision that comprises the trustworthiness of all processes and actors that are part of the system’s life cycle, and considers previous aspects from different lenses. A more holistic vision contemplates four essential axes: the global principles for ethical use and development of AI-based systems, a philosophical take on AI ethics, a risk-based approach to AI regulation, and the mentioned pillars and requirements. The seven requirements (human agency and oversight; robustness and safety; privacy and data governance; transparency; diversity, non-discrimination and fairness; societal and environmental wellbeing; and accountability) are analyzed from a triple perspective: What each requirement for trustworthy AI is, Why it is needed, and How each requirement can be implemented in practice. On the other hand, a practical approach to implement trustworthy AI systems allows defining the concept of responsibility of AI-based systems facing the law, through a given auditing process. Therefore, a responsible AI system is the resulting notion we introduce in this work, and a concept of utmost necessity that can be realized through auditing processes, subject to the challenges posed by the use of regulatory sandboxes. Our multidisciplinary vision of trustworthy AI culminates in a debate on the diverging views published lately about the future of AI. Our reflections in this matter conclude that regulation is a key for reaching a consensus among these views, and that trustworthy and responsible AI systems will be crucial for the present and future of our society.},
   keywords = {AI ethics,AI regulation,Regulatory sandbox,Responsible AI systems,Trustworthy AI},
   file = {C:\Users\MarcoRepetto\Zotero\storage\TNASL858\diaz-rodriguez_2023.pdf}
+}
+
+@report{EC2020,
+  title = {The Assessment List for Trustworthy Artificial Intelligence},
+  author = {High-Level Expert Group on Artificial Intelligence, European Commission},
+  date = {2020}
 }
 
 @book{europeancommission.jointresearchcentre._2023,
@@ -108,6 +133,26 @@
   file = {C:\Users\MarcoRepetto\Zotero\storage\JG8NMYYZ\europeancommission.jointresearchcentre._2023a.pdf}
 }
 
+@article{falco_2021,
+  title = {Governing {{AI}} Safety through Independent Audits},
+  author = {Falco, Gregory and Shneiderman, Ben and Badger, Julia and Carrier, Ryan and Dahbura, Anton and Danks, David and Eling, Martin and Goodloe, Alwyn and Gupta, Jerry and Hart, Christopher and Jirotka, Marina and Johnson, Henric and LaPointe, Cara and Llorens, Ashley J. and Mackworth, Alan K. and Maple, Carsten and Pálsson, Sigurður Emil and Pasquale, Frank and Winfield, Alan and Yeong, Zee Kin},
+  date = {2021-07},
+  journaltitle = {Nature Machine Intelligence},
+  shortjournal = {Nat Mach Intell},
+  volume = {3},
+  number = {7},
+  pages = {566--571},
+  publisher = {{Nature Publishing Group}},
+  issn = {2522-5839},
+  doi = {10.1038/s42256-021-00370-7},
+  url = {https://www.nature.com/articles/s42256-021-00370-7},
+  urldate = {2023-10-29},
+  abstract = {Highly automated systems are becoming omnipresent. They range in function from self-driving vehicles to advanced medical diagnostics and afford many benefits. However, there are assurance challenges that have become increasingly visible in high-profile crashes and incidents. Governance of such systems is critical to garner widespread public trust. Governance principles have been previously proposed offering aspirational guidance to automated system developers; however, their implementation is often impractical given the excessive costs and processes required to enact and then enforce the principles. This Perspective, authored by an international and multidisciplinary team across government organizations, industry and academia, proposes a mechanism to drive widespread assurance of highly automated systems: independent audit. As proposed, independent audit of AI systems would embody three ‘AAA’ governance principles of prospective risk Assessments, operation Audit trails and system Adherence to jurisdictional requirements. Independent audit of AI systems serves as a pragmatic approach to an otherwise burdensome and unenforceable assurance challenge.},
+  issue = {7},
+  langid = {english},
+  keywords = {assessment\_framework,Computer science,Ethics,Information systems and information technology,Science,Software,technology and society}
+}
+
 @online{ferry_2023,
   title = {Probabilistic {{Dataset Reconstruction}} from {{Interpretable Models}}},
   author = {Ferry, Julien and Aïvodji, Ulrich and Gambs, Sébastien and Huguet, Marie-José and Siala, Mohamed},
@@ -121,7 +166,24 @@
   pubstate = {preprint},
   version = {1},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Information Theory},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\RB5EE8AL\\Ferry et al. - 2023 - Probabilistic Dataset Reconstruction from Interpre.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\YZNRHHRP\\2308.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\RB5EE8AL\\ferry_2023.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\YZNRHHRP\\2308.html}
+}
+
+@online{floridi_2022,
+  type = {SSRN Scholarly Paper},
+  title = {{{capAI}} - {{A Procedure}} for {{Conducting Conformity Assessment}} of {{AI Systems}} in {{Line}} with the {{EU Artificial Intelligence Act}}},
+  author = {Floridi, Luciano and Holweg, Matthias and Taddeo, Mariarosaria and Amaya Silva, Javier and Mökander, Jakob and Wen, Yuni},
+  date = {2022-03-23},
+  number = {4064091},
+  location = {{Rochester, NY}},
+  doi = {10.2139/ssrn.4064091},
+  url = {https://papers.ssrn.com/abstract=4064091},
+  urldate = {2023-10-29},
+  abstract = {We have developed capAI, a conformity assessment procedure for AI systems, to provide an independent, comparable, quantifiable, and accountable assessment of AI systems that conforms with the proposed AIA regulation. By building on the AIA, capAI provides organisations with practical guidance on how high-level ethics principles can be translated into verifiable criteria that help shape the design, development, deployment and use of ethical AI. The main purpose of capAI is to serve as a governance tool that ensures and demonstrates that the development and operation of an AI system are trustworthy – i.e., legally compliant, ethically sound, and technically robust – and thus conform to the AIA.},
+  langid = {english},
+  pubstate = {preprint},
+  keywords = {AI,AI Act,AI Auditing,AI legislation,assessment\_framework,Conformity Assessment,EU,framework,Trustworthy AI},
+  file = {C:\Users\MarcoRepetto\Zotero\storage\985ZKSMH\floridi_2022.pdf}
 }
 
 @online{ghosh_2022,
@@ -136,7 +198,7 @@
   abstract = {In recent years, machine learning (ML) algorithms have been deployed in safety-critical and high-stake decision-making, where the fairness of algorithms is of paramount importance. Fairness in ML centers on detecting bias towards certain demographic populations induced by an ML classifier and proposes algorithmic solutions to mitigate the bias with respect to different fairness definitions. To this end, several fairness verifiers have been proposed that compute the bias in the prediction of an ML classifier--essentially beyond a finite dataset--given the probability distribution of input features. In the context of verifying linear classifiers, existing fairness verifiers are limited by accuracy due to imprecise modeling of correlations among features and scalability due to restrictive formulations of the classifiers as SSAT/SMT formulas or by sampling. In this paper, we propose an efficient fairness verifier, called FVGM, that encodes the correlations among features as a Bayesian network. In contrast to existing verifiers, FVGM proposes a stochastic subset-sum based approach for verifying linear classifiers. Experimentally, we show that FVGM leads to an accurate and scalable assessment for more diverse families of fairness-enhancing algorithms, fairness attacks, and group/causal fairness metrics than the state-of-the-art fairness verifiers. We also demonstrate that FVGM facilitates the computation of fairness influence functions as a stepping stone to detect the source of bias induced by subsets of features.},
   pubstate = {preprint},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computers and Society,Computer Science - Machine Learning,Statistics - Applications},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\66U4LN97\\Ghosh et al. - 2022 - Algorithmic Fairness Verification with Graphical M.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\YI54HWZF\\2109.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\66U4LN97\\ghosh_2022.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\YI54HWZF\\2109.html}
 }
 
 @online{hacker_2023,
@@ -190,7 +252,7 @@
   urldate = {2023-09-12},
   abstract = {Companies increasingly deploy artificial intelligence (AI) technologies in their personnel recruiting and selection processes to streamline them, thus making them more efficient, consistent, and less human biased. However, prior research found that applicants prefer face-to-face interviews compared with AI interviews, perceiving them as less fair. Additionally, emerging evidence exists that contextual influences, such as the type of task for which AI is used, or applicants’ individual differences, may influence applicants’ reactions to AI-powered selection. The purpose of our study was to investigate whether adjusting process design factors may help to improve people's fairness perceptions of AI interviews. The results of our 2 x 2 x 2 online study (N = 404) showed that the positioning of the AI interview in the overall selection process, as well as participants’ sensitization to its potential to reduce human bias in the selection process have a significant effect on people’s perceptions of fairness. Additionally, these two process design factors had an indirect effect on overall organizational attractiveness mediated through applicants’ fairness perceptions. The findings may help organizations to optimize their deployment of AI in selection processes to improve people’s perceptions of fairness and thus attract top talent.},
   langid = {english},
-  file = {C:\Users\MarcoRepetto\Zotero\storage\EWFP7DSF\Hunkenschroer - 2021 - How to Improve Fairness Perceptions of AI in Hirin.pdf}
+  file = {C:\Users\MarcoRepetto\Zotero\storage\EWFP7DSF\hunkenschroer_2021.pdf}
 }
 
 @online{hupont_2023,
@@ -207,7 +269,7 @@
   abstract = {Despite recent efforts by the Artificial Intelligence (AI) community to move towards standardised procedures for documenting models, methods, systems or datasets, there is currently no methodology focused on use cases aligned with the risk-based approach of the European AI Act (AI Act). In this paper, we propose a new framework for the documentation of use cases, that we call "use case cards", based on the use case modelling included in the Unified Markup Language (UML) standard. Unlike other documentation methodologies, we focus on the intended purpose and operational use of an AI system. It consists of two main parts. Firstly, a UML-based template, tailored to allow implicitly assessing the risk level of the AI system and defining relevant requirements. Secondly, a supporting UML diagram designed to provide information about the system-user interactions and relationships. The proposed framework is the result of a co-design process involving a relevant team of EU policy experts and scientists. We have validated our proposal with 11 experts with different backgrounds and a reasonable knowledge of the AI Act as a prerequisite. We provide the 5 "use case cards" used in the co-design and validation process. "Use case cards" allows framing and contextualising use cases in an effective way, and we hope this methodology can be a useful tool for policy makers and providers for documenting use cases, assessing the risk level, adapting the different requirements and building a catalogue of existing usages of AI.},
   pubstate = {preprint},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computers and Society},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\UHTEUBJP\\Hupont et al. - 2023 - Use case cards a use case reporting framework ins.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\3FSFE8PR\\2306.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\UHTEUBJP\\hupont_2023.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\3FSFE8PR\\2306.html}
 }
 
 @article{ii_,
@@ -216,7 +278,25 @@
   journaltitle = {VANDERBILT LAW REVIEW},
   volume = {76},
   langid = {english},
-  file = {C:\Users\MarcoRepetto\Zotero\storage\FFFSHDFD\Ii et al. - Humans in the Loop.pdf}
+  file = {C:\Users\MarcoRepetto\Zotero\storage\FFFSHDFD\ii_.pdf}
+}
+
+@article{kinney_1972,
+  title = {The {{Auditor}}'s {{Sampling Objectives}}: {{Four}} or {{Two}}?},
+  shorttitle = {The {{Auditor}}'s {{Sampling Objectives}}},
+  author = {Kinney, William R.},
+  date = {1972},
+  journaltitle = {Journal of Accounting Research},
+  volume = {10},
+  number = {2},
+  eprint = {2490019},
+  eprinttype = {jstor},
+  pages = {407--412},
+  publisher = {{[Accounting Research Center, Booth School of Business, University of Chicago, Wiley]}},
+  issn = {0021-8456},
+  doi = {10.2307/2490019},
+  url = {https://www.jstor.org/stable/2490019},
+  urldate = {2023-11-05}
 }
 
 @article{mariani_2023,
@@ -233,7 +313,7 @@
   url = {https://ieeexplore.ieee.org/document/10042078/},
   urldate = {2023-10-04},
   langid = {english},
-  file = {C:\Users\MarcoRepetto\Zotero\storage\DVXXPMFR\Mariani et al. - 2023 - Trustworthy AI—Part 1.pdf}
+  file = {C:\Users\MarcoRepetto\Zotero\storage\DVXXPMFR\mariani_2023.pdf}
 }
 
 @article{mitchell-2019-model-cards,
@@ -261,7 +341,7 @@
   abstract = {The authors are concerned about the safety, health, and rights of the European citizens due to inadequate measures and procedures required by the current draft of the EU Artificial Intelligence (AI) Act for the conformity assessment of AI systems. We observe that not only the current draft of the EU AI Act, but also the accompanying standardization efforts in CEN/CENELEC, have resorted to the position that real functional guarantees of AI systems supposedly would be unrealistic and too complex anyways. Yet enacting a conformity assessment procedure that creates the false illusion of trust in insufficiently assessed AI systems is at best naive and at worst grossly negligent. The EU AI Act thus misses the point of ensuring quality by functional trustworthiness and correctly attributing responsibilities. The trustworthiness of an AI decision system lies first and foremost in the correct statistical testing on randomly selected samples and in the precision of the definition of the application domain, which enables drawing samples in the first place. We will subsequently call this testable quality functional trustworthiness. It includes a design, development, and deployment that enables correct statistical testing of all relevant functions. We are firmly convinced and advocate that a reliable assessment of the statistical functional properties of an AI system has to be the indispensable, mandatory nucleus of the conformity assessment. In this paper, we describe the three necessary elements to establish a reliable functional trustworthiness, i.e., (1) the definition of the technical distribution of the application, (2) the risk-based minimum performance requirements, and (3) the statistically valid testing based on independent random samples.},
   pubstate = {preprint},
   version = {1},
-  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Statistics - Machine Learning},
+  keywords = {assessment\_framework,Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Statistics - Machine Learning},
   file = {C:\Users\MarcoRepetto\Zotero\storage\LTW5TCLH\nessler_2023.pdf}
 }
 
@@ -315,6 +395,22 @@
   file = {C:\Users\MarcoRepetto\Zotero\storage\7KQ7498P\2103.html}
 }
 
+@incollection{saaty_1988,
+  title = {What Is the {{Analytic Hierarchy Process}}?},
+  booktitle = {Mathematical {{Models}} for {{Decision Support}}},
+  author = {Saaty, Thomas L.},
+  editor = {Mitra, Gautam and Greenberg, Harvey J. and Lootsma, Freerk A. and Rijkaert, Marcel J. and Zimmermann, Hans J.},
+  date = {1988},
+  pages = {109--121},
+  publisher = {{Springer Berlin Heidelberg}},
+  location = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-83555-1_5},
+  url = {http://link.springer.com/10.1007/978-3-642-83555-1_5},
+  urldate = {2023-11-05},
+  isbn = {978-3-642-83557-5 978-3-642-83555-1},
+  langid = {english}
+}
+
 @online{schmidt_2019a,
   title = {Quantifying {{Interpretability}} and {{Trust}} in {{Machine Learning Systems}}},
   author = {Schmidt, Philipp and Biessmann, Felix},
@@ -344,7 +440,43 @@
   abstract = {While deep neural network models offer unmatched classification performance, they are prone to learning spurious correlations in the data. Such dependencies on confounding information can be difficult to detect using performance metrics if the test data comes from the same distribution as the training data. Interpretable ML methods such as post-hoc explanations or inherently interpretable classifiers promise to identify faulty model reasoning. However, there is mixed evidence whether many of these techniques are actually able to do so. In this paper, we propose a rigorous evaluation strategy to assess an explanation technique's ability to correctly identify spurious correlations. Using this strategy, we evaluate five post-hoc explanation techniques and one inherently interpretable method for their ability to detect three types of artificially added confounders in a chest x-ray diagnosis task. We find that the post-hoc technique SHAP, as well as the inherently interpretable Attri-Net provide the best performance and can be used to reliably identify faulty model behavior.},
   pubstate = {preprint},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning},
-  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\9D4FXUVR\\Sun et al. - 2023 - Right for the Wrong Reason Can Interpretable ML T.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FFPF6J8S\\2307.html}
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\9D4FXUVR\\sun_2023.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\FFPF6J8S\\2307.html}
+}
+
+@article{tayi_1985,
+  title = {Integration of {{Auditor Preferences}} and {{Sampling Objectives}}: {{A Polynomial Goal-Programming Perspective}}},
+  shorttitle = {Integration of {{Auditor Preferences}} and {{Sampling Objectives}}},
+  author = {Tayi, Giri Kumar and Gangolly, Jagdish},
+  date = {1985-10-01},
+  journaltitle = {Journal of the Operational Research Society},
+  shortjournal = {J Oper Res Soc},
+  volume = {36},
+  number = {10},
+  pages = {951--957},
+  issn = {1476-9360},
+  doi = {10.1057/jors.1985.166},
+  url = {https://doi.org/10.1057/jors.1985.166},
+  urldate = {2023-10-30},
+  abstract = {The choice of an audit sample involves integration of diverse goals. Such integration must consider the preferences of the auditor towards costs as well as risks. Traditionally this problem has been formulated to determine minimal sample size and its allocation such that each of the goals is satisfied simultaneously or to the extent possible. However, these formulations do not consider trade-offs between goals, so that the sample may not reflect the auditor's preferences regarding sampling costs and risks. In this paper, we model such trade-offs by utilizing a polynomial goal-programming framework and utilize a practical case problem to illustrate the framework. Computational experience shows the technique to be feasible and inexpensive.},
+  langid = {english},
+  keywords = {accounting,auditing,mathematical programming}
+}
+
+@article{vakkuri_2021,
+  title = {{{ECCOLA}} — {{A}} Method for Implementing Ethically Aligned {{AI}} Systems},
+  author = {Vakkuri, Ville and Kemell, Kai-Kristian and Jantunen, Marianna and Halme, Erika and Abrahamsson, Pekka},
+  date = {2021-12-01},
+  journaltitle = {Journal of Systems and Software},
+  shortjournal = {Journal of Systems and Software},
+  volume = {182},
+  pages = {111067},
+  issn = {0164-1212},
+  doi = {10.1016/j.jss.2021.111067},
+  url = {https://www.sciencedirect.com/science/article/pii/S0164121221001643},
+  urldate = {2023-10-29},
+  abstract = {Artificial Intelligence (AI) systems are becoming increasingly widespread and exert a growing influence on society at large. The growing impact of these systems has also highlighted potential issues that may arise from their utilization, such as data privacy issues, resulting in calls for ethical AI systems. Yet, how to develop ethical AI systems remains an important question in the area. How should the principles and values be converted into requirements for these systems, and what should developers and the organizations developing these systems do? To further bridge this gap in the area, in this paper, we present a method for implementing AI ethics: ECCOLA. Following a cyclical action research approach, ECCOLA has been iteratively developed over the course of multiple years, in collaboration with both researchers and practitioners.},
+  keywords = {AI ethics,Artificial intelligence,assessment\_framework,Ethics,Implementing,Method},
+  file = {C:\Users\MarcoRepetto\Zotero\storage\88MVMXRC\vakkuri_2021.pdf}
 }
 
 @article{vetter_2023,
@@ -362,6 +494,7 @@
   urldate = {2023-10-15},
   abstract = {Abstract                            Building artificial intelligence (AI) systems that adhere to ethical standards is a complex problem. Even though a multitude of guidelines for the design and development of such trustworthy AI systems exist, these guidelines focus on high-level and abstract requirements for AI systems, and it is often very difficult to assess if a specific system fulfills these requirements. The Z-Inspection® process provides a holistic and dynamic framework to evaluate the trustworthiness of specific AI systems at different stages of the AI lifecycle, including intended use, design, and development. It focuses, in particular, on the discussion and identification of ethical issues and tensions through the analysis of socio-technical scenarios and a requirement-based framework for ethical and trustworthy AI. This article is a methodological reflection on the Z-Inspection® process. We illustrate how high-level guidelines for ethical and trustworthy AI can be applied in practice and provide insights for both AI researchers and AI practitioners. We share the lessons learned from conducting a series of independent assessments to evaluate the trustworthiness of real-world AI systems, as well as key recommendations and practical suggestions on how to ensure a rigorous trustworthiness assessment throughout the lifecycle of an AI system. The results presented in this article are based on our assessments of AI systems in the healthcare sector and environmental monitoring, where we used the framework for trustworthy AI proposed in the               Ethics Guidelines for Trustworthy AI               by the European Commission’s High-Level Expert Group on AI. However, the assessment process and the lessons learned can be adapted to other domains and include additional frameworks.},
   langid = {english},
+  keywords = {assessment\_framework},
   file = {C:\Users\MarcoRepetto\Zotero\storage\7CBHS7A2\vetter_2023.pdf}
 }
 
@@ -381,6 +514,15 @@
   file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\R8KSZ6BL\\walters_2023a.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\BV9PH2LD\\2307.html}
 }
 
+@article{whittlestone_2019,
+  title = {Ethical and Societal Implications of Algorithms, Data, and Artificial Intelligence: A Roadmap for Research},
+  author = {Whittlestone, Jess and Nyrup, Rune and Alexandrova, Anna and Dihal, Kanta and Cave, Stephen},
+  date = {2019},
+  journaltitle = {London: Nuffield Foundation},
+  langid = {english},
+  file = {C:\Users\MarcoRepetto\Zotero\storage\VU65VIMV\Whittlestone et al. - Ethical and societal implications of algorithms, d.pdf}
+}
+
 @online{winter_2021,
   title = {Trusted {{Artificial Intelligence}}: {{Towards Certification}} of {{Machine Learning Applications}}},
   shorttitle = {Trusted {{Artificial Intelligence}}},
@@ -394,7 +536,7 @@
   urldate = {2023-10-05},
   abstract = {Artificial Intelligence is one of the fastest growing technologies of the 21st century and accompanies us in our daily lives when interacting with technical applications. However, reliance on such technical systems is crucial for their widespread applicability and acceptance. The societal tools to express reliance are usually formalized by lawful regulations, i.e., standards, norms, accreditations, and certificates. Therefore, the T\textbackslash "UV AUSTRIA Group in cooperation with the Institute for Machine Learning at the Johannes Kepler University Linz, proposes a certification process and an audit catalog for Machine Learning applications. We are convinced that our approach can serve as the foundation for the certification of applications that use Machine Learning and Deep Learning, the techniques that drive the current revolution in Artificial Intelligence. While certain high-risk areas, such as fully autonomous robots in workspaces shared with humans, are still some time away from certification, we aim to cover low-risk applications with our certification procedure. Our holistic approach attempts to analyze Machine Learning applications from multiple perspectives to evaluate and verify the aspects of secure software development, functional requirements, data quality, data protection, and ethics. Inspired by existing work, we introduce four criticality levels to map the criticality of a Machine Learning application regarding the impact of its decisions on people, environment, and organizations. Currently, the audit catalog can be applied to low-risk applications within the scope of supervised learning as commonly encountered in industry. Guided by field experience, scientific developments, and market demands, the audit catalog will be extended and modified accordingly.},
   pubstate = {preprint},
-  keywords = {Computer Science - Computers and Society,Computer Science - Machine Learning,Computer Science - Software Engineering,Statistics - Machine Learning},
+  keywords = {assessment\_framework,Computer Science - Computers and Society,Computer Science - Machine Learning,Computer Science - Software Engineering,Statistics - Machine Learning},
   file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\T89UWFWR\\winter_2021.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\R2J747UQ\\2103.html}
 }
 
@@ -429,4 +571,23 @@
   pubstate = {preprint},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language,Computer Science - Machine Learning},
   file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\D97WZARN\\zhou_2023.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\BHJIRQDV\\2205.html}
+}
+
+@article{zicari_2021,
+  title = {Z-{{Inspection}}®: {{A Process}} to {{Assess Trustworthy AI}}},
+  shorttitle = {Z-{{Inspection}}®},
+  author = {Zicari, Roberto V. and Brodersen, John and Brusseau, James and Düdder, Boris and Eichhorn, Timo and Ivanov, Todor and Kararigas, Georgios and Kringen, Pedro and McCullough, Melissa and Möslein, Florian and Mushtaq, Naveed and Roig, Gemma and Stürtz, Norman and Tolle, Karsten and Tithi, Jesmin Jahan and family=Halem, given=Irmhild, prefix=van, useprefix=true and Westerlund, Magnus},
+  date = {2021-06},
+  journaltitle = {IEEE Transactions on Technology and Society},
+  volume = {2},
+  number = {2},
+  pages = {83--97},
+  issn = {2637-6415},
+  doi = {10.1109/TTS.2021.3066209},
+  url = {https://ieeexplore.ieee.org/document/9380498?denied=},
+  urldate = {2023-10-29},
+  abstract = {The ethical and societal implications of artificial intelligence systems raise concerns. In this article, we outline a novel process based on applied ethics, namely, Z-Inspection®, to assess if an AI system is trustworthy. We use the definition of trustworthy AI given by the high-level European Commission's expert group on AI. Z-Inspection® is a general inspection process that can be applied to a variety of domains where AI systems are used, such as business, healthcare, and public sector, among many others. To the best of our knowledge, Z-Inspection® is the first process to assess trustworthy AI in practice.},
+  eventtitle = {{{IEEE Transactions}} on {{Technology}} and {{Society}}},
+  keywords = {assessment\_framework},
+  file = {C\:\\Users\\MarcoRepetto\\Zotero\\storage\\NBWKWH35\\zicari_2021.pdf;C\:\\Users\\MarcoRepetto\\Zotero\\storage\\W8AVP65V\\9380498.html}
 }

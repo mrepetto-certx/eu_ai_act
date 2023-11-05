@@ -1,1 +1,202 @@
 \section{Methodology}
+This paper aims to propose a sound AI audit framework that can be used by the DM to perform sampling and testing of a complex AI system.
+The framework incorporates two relevant dimensions of the AI audit process: the tradeoffs that the AI system has to face and the scarcity of resources of the DM.
+
+Such a result is achieved by combining the AHP to decouple the different tradeoffs and the MO to solve the sampling problem. 
+In particular, polynomial GP à-là \cite{tayi_1985} is used to combine the different and conflicting objectives.
+
+The result is a five-step process consisting of the following steps:
+\begin{itemize}
+    \item \textbf{System identification:} The DM defines the AI system to be audited and the context in which it will be used.
+    \item \textbf{Tradeoffs prioritization:} Employing AHP the DM defines the relative importance of the tradeoffs that the AI system has to face.
+    \item \textbf{Optimal allocation:} Utilising GP the DM is able to achieve an optimal sampling and is capable of allocating his resources to counter emerging risks of the AI system.
+    \item \textbf{Audit:} The DM mandates the audit of the AI system according to the sampling schema obtained.
+    \item \textbf{Continuous improvement:} The DM uses the results of the audit to improve the AI system.
+\end{itemize}
+
+The proposed framework is depicted in Figure \ref{fig:framework}.
+
+\begin{figure}
+    \centering
+    \smartdiagram[circular diagram:clockwise]{System identification, Tradeoffs prioritization, Optimal allocation, Audit, Continuous improvement}
+    \caption{The proposed framework}
+    \label{fig:framework}
+\end{figure}
+
+%% STEP 1: System identification
+The first step of the proposed framework is the identification of the AI system to be audited and the context in which it will be used.
+This step is crucial and is a common point in many other AI audit frameworks such as CapAI and Z-Inspection.
+In CapAI the identification of the AI system is a risk-based one that makes their approach more in line with the EU AI Act.
+In Z-Inspection the identification is part of the assessment process and is more comprehensive than the one proposed in CapAI.
+
+In our methodology, the identification of the AI system is pivotal to identifying two aspects of the AI system.
+The first aspect is the legal basis of the AI system, in this vein we follow the risk identification approach proposed by CapAI.
+Provided that the AI system is legal and bound to certain requirements, such for example transparency for chatbots in the EU under the AI Act, the DM can proceed to the next step.
+The next step is the identification of the tradeoffs that the AI system has to face.
+This set of tradeoffs necessarily contains the legal requirements of the AI system but it is not limited to them.
+In fact, the DM can decide to include other tradeoffs that are relevant to the AI system and its particular use case.
+
+AI tradeoffs are the tensions that an AI system has to face to achieve its goals.
+In case the case of a high-risk AI system affected by the EU AI Act the necessary tradeoffs entail the following:
+
+\begin{itemize}
+    \item Accountability
+    \item Human agency and Oversight
+    \item Technical robustness and Safety
+    \item Privacy and Data Governance 
+    \item Transparency
+    \item Diversity, Non-discrimination and Fairness
+    \item Societal and Environmental well-being
+\end{itemize}
+
+%% STEP 2: Tradeoffs prioritization
+After the identification of the AI system to be audited and the context in which it will be used the DM has to define a prioritization of the tradeoffs that the AI system has to face.
+Following the best practice delineated by \cite{vetter_2023} we propose to use a binary list of tradeoffs.
+However, contrary to \cite{vetter_2023} we propose to use the AHP to define the relative importance of the tradeoffs.
+
+% Mini explanation of AHP
+AHP is a decision-making tool that allows the DM to define the relative importance of a set of alternatives.
+Originally proposed by \cite{saaty_1988} is a methodical, mathematical decision-making technique used for multi-criteria decision analysis.
+It allows the DM to model a complex problem in a hierarchical structure showing the relationships between the decision goal, criteria, sub-criteria (if exist), and alternatives.
+
+Firstly, a pairwise comparison matrix (PCM) is constructed for each criterion and alternative.
+This begins by comparing each criterion or alternative against each other relatively based on a scale of importance (from equally important to extremely more important). 
+If $a_i$ and $a_j$ are two alternatives or criteria, and $a_i$ is considered to be $n$ times as important as $a_j$, the value of $ij^{th}$ element in the matrix is $n$, and $ji^{th}$ element is $1/n$.
+
+The PCM is denoted as $A=[a_{ij}]$ with dimensions $n \times n$, where $n$ is the number of alternatives or criteria. 
+
+\begin{equation}
+    A = 
+    \begin{bmatrix}
+    a_{11} & a_{12} & ... & a_{1n} \\
+    a_{21} & a_{22} & ... & a_{2n} \\
+    ... & ... & ... & ... \\
+    a_{n1} & a_{n2} & ... & a_{nn}
+    \end{bmatrix}        
+\end{equation}
+
+where, $a_{ij}$ is the importance of $i^{th}$ element over $j^{th}$ element.
+
+This is followed by calculating a priority vector $\omega$. 
+We calculate the geometric mean of each row and normalize it, resulting in the eigenvector.
+
+\begin{equation}
+\omega_i = \frac{\left(\prod_{j=1}^{n}a_{ij}\right)^{1/n}}{\sum_{k=1}^{n}\left(\prod_{j=1}^{n}a_{kj}\right)^{1/n}}
+\end{equation}
+
+where, $\omega_i$ is the priority of $i^{th}$ element.
+
+The consistency of judgments is then calculated using a Consistency Index (CI) and a randomly generated Consistency Ratio (CR). If CR>0.1, judgments are considered inconsistent, and the process is reiterated.
+
+\begin{equation}
+CI=\frac{\lambda_{max} - n}{n - 1} \quad \text{and} \quad CR = \frac{CI}{RI}
+\end{equation}
+
+where, $\lambda_{max}$ is the maximum eigenvalue of $A$, and $CI$ and $RI$ are Consistency Index and Random Index.
+
+Finally, the criteria and alternative weights are combined to calculate the final overall scores for the alternatives.
+
+%% STEP 3: Optimal allocation
+The previous step allows the DM to define the relative importance of the tradeoffs impacting a given AI system.
+The next step is to allocate his resources to mitigate the risks of the AI system.
+
+In practice, such a task is performed by either internal or external auditors whose aim is to test the system and provide a report to the DM.
+For highly complex systems such a task is challenging and it is not always possible to audit the system in its entirety.
+Such notion of scarcity of resources is well known in the financial audit literature but rather unexplored in the AI audit literature.
+In fact, neither \cite{floridi_2022} nor \cite{zicari_2021} mention the notion of scarcity of resources.
+In our framework, instead, we assume that the DM has a limited amount of resources and that he has to decide how to allocate them to maximize the quality of the audit.
+
+Audit quality, no matter the target, is a multidimensional concept involving a series of objectives. 
+In \cite{kinney_1972} they envision several objectives, ranging from correctness to preventiveness.
+Inspired by \cite{tayi_1985} we propose to frame the problem as a MO problem and to solve it through GP.
+
+% Mini intro to goal programming
+GP is a multi-objective optimization technique that aims to minimize deviations from a set of predefined goals, which are typically expressed as mathematical constraints. 
+GP is a popular technique in decision sciences, as it allows decision-makers to explicitly consider multiple and often conflicting objectives in a single optimization model.
+
+A general GP model can be formulated as follows:
+
+\begin{align}
+\text{minimize} & \sum_{i=1}^m w_i d_i^+ + d_i^- \\
+\text{subject to} & \sum_{j=1}^n a_{ij} x_j - d_i^+ + d_i^- = g_i, &i=1,\dots,m \\
+& x_j \ge 0, &j=1,\dots,n
+\end{align}
+
+where $m$ is the number of goals, $n$ is the number of decision variables, $w_i$ is the weight of the i-th goal, $d_i^+$, and $d_i^-$ are the positive and negative deviations from the i-th goal. $a_ij$ is the coefficient of the j-th decision variable in the i-th goal constraint, $x_j$ is the j-th decision variable, and $g_i$ is the target value of the i-th goal.
+
+Our setting reframes the problem of sampling as discussed by \cite{tayi_1985} with the caveat that instead of error rates, we utilize the weights derived from the AHP.
+
+% Problem formulation
+In our problem formulation, we have a battery of tests and documents that the AI system possesses. 
+These tests and documents cover the different dimensions that compose what can be defined a trustworthy AI system.
+
+These $N$ tests and documents can be indexed by $A$ and $B$ respectively.
+Where $A$ identifies the dimensions coming from the AHP and $B$ identifies the specific risk magnitude of a given aspect the test or document is covering.
+
+In this setting $n_{ij}$ is the number of tests or documents that the AI system possesses for a given dimension $i \in A$ and magnitude $j \in B$ and $k \in A \times B$ identifies a unique tuple.
+The decision variable instead is $x_{ij}$ or $x_{k}$.
+From these definitions is worth observing that $x_{ij} \leq n_{ij}$ and when $x_{ij} = n_{ij}$ the meaning is that we are mandating a complete exploration of that particular dimension/magnitude tuple.
+Moreover we define $w{k} = w_{ij} = \frac{n_ij}{N}$ as the proportion of tests/documents for a given dimension/magnitude tuple with the marginal proportion for the dimension $i$ being $w_i = \sum_{j=1}^{|B|} w_{ij}$.
+
+Given this setting the first trivial objective is the budget constraint:
+
+\begin{equation}
+    \sum_{k \in A \times B} c_{k} x_{k} - d_1^+ \leq g_1
+\end{equation}
+
+where $g_1$ is the budget constraint and $c_{k}$ is the cost of a associated with the assessment of a particular test/document.
+
+The next two objectives composes the sample representativenes such that we assure good coverage of all the relevant dimensions as well as magnitudes.
+
+\begin{equation}
+\sum_{i \in A} \frac{w^2_i \omega_i (1-\omega_i)}{\sum_{j \in B} x_{ij}} - d_2^+ \leq g_2
+\end{equation}
+
+\begin{equation}
+\sum_{k \in A \times B} \frac{w^2_{k} \omega_k(fD_k)^2}{x_{k}} - d_3^+ \leq g_3
+\end{equation}
+
+The third objective focuses on consistency with respect to the preference scheme of the DM defined while using AHP, that is:
+
+\begin{equation}
+\sum_{k \in A \times B}  p_k(n_{k} - x_{k}) - d_4^+ \leq g_4
+\end{equation}
+
+The fourth objective is about being protective and can be decomposed into two sub objectives:
+
+\begin{equation}
+\sum_{k \in A \times B} D_k(n_{k} - x_{k}) - d_5^+ \leq g_5
+\end{equation}
+
+and 
+
+\begin{equation}
+\sum_{k \in A \times B} p_k D_k (n_{k} - x_{k}) - d_6^+ \leq g_6
+\end{equation}
+
+The remaining hard constraints being:
+
+\begin{equation}
+0 \leq x_k \leq n_k
+\end{equation}
+
+and
+
+\begin{equation}
+d_q^+ \in \mathbb{R^+} \quad \forall \quad q=1\dots6
+\end{equation}
+
+The resulting objective function collecting all the desiderata take the following polynomial form:
+
+\begin{equation}
+    Z =  \min_{x} [(d_1^+)^{p1} + (d_2^+)^{p2} + (d_3^+)^{p3} + (d_4^+)^{p4} + (d_5^+)^{p5} + (d_6^+)^{p6}]
+\end{equation}
+
+Solving this MO problem allows the DM to allocate his resources optimally and to further assess the risks of the AI system by placing more emphasis on certain aspects of the AI system.
+
+After the optimal allocation of resources, the DM can proceed to the audit of the AI system, which is the next step of the proposed framework.
+During this process, new information can be gathered and the DM can use it to improve the AI system.
+Moreover, the auditing process can result in additional requirements that the AI system has to face.
+
+This is the reason behind our framework being circular and similar to \cite{zicari_2021}.
+The process must be repeated continuously to ensure that the AI system is safe and trustworthy throughout its lifecycle.
