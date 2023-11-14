@@ -16,7 +16,7 @@ jobs:
         with:
           root_file: main.tex
           args: "-lualatex -file-line-error -interaction=nonstopmode"
-      - name: Release
+      - name: Release PDF
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
