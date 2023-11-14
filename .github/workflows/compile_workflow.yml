@@ -1,4 +1,4 @@
-name: Build LaTeX and Release
+name: Build LaTeX and Release given a tag
 
 on:
   push:
