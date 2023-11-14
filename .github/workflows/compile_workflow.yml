@@ -11,22 +11,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
     - name: Build LaTeX
       uses: xu-cheng/latex-action@v3
       with:
         root_file: main.tex
         args: "-lualatex -file-line-error -interaction=nonstopmode"
-
-    - name: Release with Notes
-      uses: softprops/action-gh-release@v1
-      with:
-        files: main.pdf
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Upload PDF
       uses: actions/upload-artifact@v2
       with:
         name: PDF
         path: main.pdf
+    - name: Release with Notes
+      uses: softprops/action-gh-release@v1
+      with:
+        files: main.pdf
