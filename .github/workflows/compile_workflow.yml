@@ -3,7 +3,7 @@ name: Build LaTeX and Release given a tag
 on:
   push:
     tags:
-      - "v*.*"
+      - "v*"
 
 jobs:
   build:
