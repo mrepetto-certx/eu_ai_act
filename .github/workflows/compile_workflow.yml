@@ -1,4 +1,4 @@
-name: Build LaTeX and Release given a tag
+name: Build LaTeX and Upload Artifact
 
 on:
   push:
@@ -16,12 +16,7 @@ jobs:
         root_file: main.tex
         args: "-lualatex -file-line-error -interaction=nonstopmode"
     - name: Upload PDF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PDF
         path: main.pdf
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: main.pdf
