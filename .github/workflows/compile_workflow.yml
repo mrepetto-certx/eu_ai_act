@@ -7,8 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Build LaTeX full_version
-      run: make compile pdf_folder
+    - name: Build LaTeX documents
+      run: make compile
+    - name: Clean LaTeX build files
+      run: make clean
+    - name: Create PDF folder
+      run: make pdf_folder
     - name: Upload PDFs
       uses: actions/upload-artifact@v4
       with:
