@@ -8,7 +8,7 @@ compile:
 	$(foreach path,$(SOURCE_PATHS),docker-compose exec -T euaiact latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make -cd $(path)main.tex &)
 
 clean:
-	$(foreach file,$(CLEAN_FILES),docker-compose exec euaiact find . -name "$(file)" -type f -delete &)
+	$(foreach file,$(CLEAN_FILES),docker-compose exec -T euaiact find . -name "$(file)" -type f -delete &)
 
 pdf_folder:
 	docker-compose exec -T euaiact rm -rf pdf_folder
