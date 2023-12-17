@@ -10,7 +10,7 @@ jobs:
     - name: Build LaTeX full_version
       run: make compile 
     - name: Upload PDFs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: PDFs
-        path: pdf_folder/*.pdf
+        path: pdf_folder/
