@@ -2,11 +2,6 @@ name: Build LaTeX and Upload Artifact
 
 on:
   push:
-    branches-ignore:
-      - '*'
-  pull_request:
-    branches-ignore:
-      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
