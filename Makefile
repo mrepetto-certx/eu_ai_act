@@ -11,6 +11,6 @@ clean:
 	$(foreach file,$(CLEAN_FILES),docker-compose exec euaiact find . -name "$(file)" -type f -delete &)
 
 pdf_folder:
-	docker-compose exec euaiact rm -rf pdf_folder
-	docker-compose exec euaiact mkdir pdf_folder
-	$(foreach path,$(SOURCE_PATHS),docker-compose exec euaiact cp $(path)main.pdf pdf_folder/$(notdir $(patsubst %/,%,$(path))).pdf &)
+	docker-compose exec -T euaiact rm -rf pdf_folder
+	docker-compose exec -T euaiact mkdir pdf_folder
+	$(foreach path,$(SOURCE_PATHS),docker-compose exec -T euaiact cp $(path)main.pdf pdf_folder/$(notdir $(patsubst %/,%,$(path))).pdf &)

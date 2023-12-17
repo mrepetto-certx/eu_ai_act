@@ -6,9 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Build LaTeX full_version
-      run: make compile
+      run: make compile 
     - name: Upload PDFs
       uses: actions/upload-artifact@v3
       with:
