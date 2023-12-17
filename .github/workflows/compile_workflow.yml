@@ -2,21 +2,20 @@ name: Build LaTeX and Upload Artifact
 
 on:
   push:
-    branches:
-      - main
-
+    branches-ignore:
+      - '*'
+  pull_request:
+    branches-ignore:
+      - '*'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Build LaTeX full_version
-      uses: xu-cheng/latex-action@v3
-      with:
-        root_file: full_version/main.tex
-        args: "-lualatex -file-line-error -interaction=nonstopmode"
-    - name: Upload PDF
+      run: make compile
+    - name: Upload PDFs
       uses: actions/upload-artifact@v3
       with:
-        name: Full Version PDF
-        path: full_version/main.pdf
+        name: PDFs
+        path: pdf_folder/*.pdf

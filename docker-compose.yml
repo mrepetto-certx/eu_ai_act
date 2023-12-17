@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  euaiact:
+    image: euaiact
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/repo
+    working_dir: /repo
